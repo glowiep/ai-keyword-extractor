@@ -1,17 +1,15 @@
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Container, Box, Text } from "@chakra-ui/react"
 
 function App() {
   
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
-    </>
-  )
-}
+    <Box bg='gray.800' color='white' height='100vh' paddingTop={130} >
+      <Container maxW='3xl' centerContent>
+        <Text>AI Keyword Extractor</Text>
+
+      </Container>
+    </Box>
+  );
+};
 
 export default App
