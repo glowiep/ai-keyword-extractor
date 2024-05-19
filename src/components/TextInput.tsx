@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Textarea } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { MotionButton } from "../utils/motionUtils";
+import { extractKeywords } from "../utils/extractKeywords";
 
-function TextInput() {
+function TextInput({ setLoading, setIsOpen, setKeywords }) {
   const [input, setInput] = useState("");
   const toast = useToast();
 
@@ -19,7 +20,7 @@ function TextInput() {
       });
       return;
     }
-    extractKeywords(input);
+    extractKeywords(setLoading, setIsOpen, setKeywords, input);
   };
 
   const submitButtonStyles = {
