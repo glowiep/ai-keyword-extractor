@@ -1,13 +1,14 @@
 import { Heading, Text } from "@chakra-ui/react";
+import applicationText from "../const/applicationText";
 
 function Header() {
   return (
     <>
       <Heading color="white" marginBottom="1rem">
-        AI Keyword Extractor
+        {applicationText.Header.heading}
       </Heading>
       <Text fontSize='normal' textAlign="center">
-        Enter a text snippet below and we will extract the keywords for you.
+      {applicationText.Header.description}
       </Text>
     </>
   )
