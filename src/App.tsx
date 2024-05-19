@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import TextInput from "./components/TextInput";
 
 function App() {
   
@@ -23,10 +24,21 @@ function App() {
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: .75 }}
           style={{
             textAlign: 'center',
             paddingTop: "2.25em",
+          }}
+        >
+          <TextInput />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+          style={{
+            textAlign: 'center',
+            paddingTop: "2.25em",            
           }}
         >
           <Footer />
