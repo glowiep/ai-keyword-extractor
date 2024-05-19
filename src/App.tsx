@@ -1,4 +1,4 @@
-import { Flex, Container, Box } from "@chakra-ui/react"
+import { Flex, Container } from "@chakra-ui/react"
 import { motion } from "framer-motion";
 
 import Header from "./components/Header";
