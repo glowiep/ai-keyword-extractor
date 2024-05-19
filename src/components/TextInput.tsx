@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Textarea } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { MotionButton } from "../utils/motionUtils";
-import { extractKeywords } from "../utils/extractKeywords";
+import useApplicationData from "../hooks/useApplicationData";
 
-function TextInput({ setLoading, setIsOpen, setKeywords }) {
+function TextInput() {
+  const { extractKeywords } = useApplicationData();
+
   const [input, setInput] = useState("");
   const toast = useToast();
 
@@ -20,12 +22,12 @@ function TextInput({ setLoading, setIsOpen, setKeywords }) {
       });
       return;
     }
-    extractKeywords(setLoading, setIsOpen, setKeywords, input);
+    extractKeywords(input);
   };
 
   const submitButtonStyles = {
     whileTap: { scale: 0.5, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" },
-    whileHover: { scale: 1.1, color: "blue" },
+    whileHover: { scale: 1.1, },
     variant: "solid",
     borderRadius: "2em",
     bg: "blue.300",
