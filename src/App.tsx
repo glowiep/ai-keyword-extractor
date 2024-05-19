@@ -1,13 +1,14 @@
-import { Container, Box } from "@chakra-ui/react"
+import { Flex, Container, Box } from "@chakra-ui/react"
 import { motion } from "framer-motion";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TextInput from "./components/TextInput";
+import KeywordsOutput from "./components/KeywordsOutput";
 
 function App() {
   return (
-    <Box bg='gray.800' color='white' height='100vh' paddingTop={130} >
+    <Flex bg='gray.800' color='white' height='100vh' justifyContent="center" alignItems="center">
       <Container maxW='3xl' centerContent>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -40,10 +41,11 @@ function App() {
             paddingTop: "2.25em",            
           }}
         >
+          <KeywordsOutput />
           <Footer />
         </motion.div>
       </Container>
-    </Box>
+    </Flex>
   );
 };
 
