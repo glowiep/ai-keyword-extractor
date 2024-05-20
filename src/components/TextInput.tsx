@@ -30,11 +30,12 @@ function TextInput() {
     whileHover: { scale: 1.1, },
     variant: "solid",
     borderRadius: "2em",
-    bg: "blue.300",
+    bg: "blue.200",
+    w: "200px",
     px: { base: "1.5em", md: "2em" },
     gap: { base: "0.5em", md: "1em" },
     fontSize: { base: "sm", md: "lg" },
-    mt: "2em",
+    mt: "1em",
   };
 
   return (
