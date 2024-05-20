@@ -4,7 +4,7 @@ const applicationText = {
     description:
       "Enter a text snippet below to extract keywords from its content.",
   },
-  Footer: { credits: "Powered By Open AI" },
+  Footer: { credits: "Powered By OpenAI" },
 };
 
 export default applicationText;
