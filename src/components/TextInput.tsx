@@ -21,8 +21,9 @@ function TextInput() {
         position: "top"
       });
       return;
+    } else {
+      return extractKeywords(`${input}`);
     }
-    extractKeywords(input);
   };
 
   const submitButtonStyles = {
@@ -51,7 +52,7 @@ function TextInput() {
           };
         }) => setInput(e.target.value)}
       ></Textarea>
-      <MotionButton {...submitButtonStyles} onClick={submitText}>
+      <MotionButton {...submitButtonStyles} onClick={() => submitText()}>
         🪄 Extract Keywords
       </MotionButton>
     </>
