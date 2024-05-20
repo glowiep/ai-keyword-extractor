@@ -3,11 +3,13 @@ import { Textarea } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { MotionButton } from "../utils/motionUtils";
 import useApplicationData from "../hooks/useApplicationData";
+import { useAppContext } from "../contexts/AppContext";
 
 function TextInput() {
-  const { extractKeywords } = useApplicationData();
+  const { extractKeywords, setInput } = useApplicationData();
+  const { state } = useAppContext();
+  const input = state.input;
 
-  const [input, setInput] = useState("");
   const toast = useToast();
 
   const submitText = function () {

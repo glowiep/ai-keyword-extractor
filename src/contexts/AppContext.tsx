@@ -3,6 +3,7 @@ import { createContext, useContext, useReducer, ReactNode, Dispatch } from "reac
 export const ACTIONS = {
   EXTRACT_BEGIN: 'EXTRACT_BEGIN',
   SET_EXTRACTED: 'SET_EXTRACTED',
+  SET_INPUT: 'SET_INPUT',
 }
 
 interface State {
@@ -10,6 +11,7 @@ interface State {
   isLoading: boolean;
   isExtracted: boolean;
   showKeywords: boolean;
+  input: string;
 }
 
 interface Action {
@@ -31,6 +33,11 @@ function reducer(state: State, action: Action) {
         isLoading: false,
         keywords: [action.payload]
       }
+    case ACTIONS.SET_INPUT:
+      return {
+        ...state,
+        input: action.payload
+      }
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
@@ -43,6 +50,7 @@ const INITIAL_STATE = {
   isLoading: false,
   isExtracted: false,
   showKeywords: false,
+  input: '',
 }
 
 interface AppContextProps {

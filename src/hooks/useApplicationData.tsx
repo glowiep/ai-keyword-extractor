@@ -46,7 +46,16 @@ const useApplicationData = () => {
         console.log(error);
       }
   };
-
+  
+  /**
+   * Sets the input value in state to the text entered by the user
+   * @function
+   * @returns {void}
+   */
+  const setInput = (text: string) => {
+    dispatch({ type: ACTIONS.SET_INPUT, payload: text })
+  }
+  
   // Helper function that accepts text as an argument and copies it to the user’s clipboard
   async function copyTextToClipboard(text: string) {
     if ('clipboard' in navigator) {
@@ -75,7 +84,8 @@ const useApplicationData = () => {
 
   return {
     extractKeywords,
-    copyKeywords
+    copyKeywords,
+    setInput
   }
   
 };
