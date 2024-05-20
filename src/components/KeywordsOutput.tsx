@@ -1,4 +1,4 @@
-import { Heading, Text, CircularProgress, Box, Button } from "@chakra-ui/react";
+import { Heading, Text, CircularProgress, Box } from "@chakra-ui/react";
 import { CopyIcon } from "@chakra-ui/icons";
 // import { useAppContext } from "../contexts/AppContext";
 import { MotionButton } from "../utils/motionUtils";
