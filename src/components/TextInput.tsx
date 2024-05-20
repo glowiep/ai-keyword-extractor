@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Textarea } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { MotionButton } from "../utils/motionUtils";
@@ -46,7 +45,8 @@ function TextInput() {
       <Textarea
         bg="gray.100"
         color="gray.800"
-        height={150}
+        height={180}
+        minWidth={300}
         value={input}
         onChange={(e: {
           target: {

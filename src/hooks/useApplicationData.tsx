@@ -20,13 +20,13 @@ const useApplicationData = () => {
       };
 
       const data = {
-        model: 'text-davinci-003',
+        model: 'gpt-3.5-turbo-instruct',
         prompt:
           `Extract keywords from this text. Make the first letter of every word uppercase and separate with commas \n\n` +
           input +
           '',
         temperature: 0.5,
-        max_tokens: 60,
+        max_tokens: 20,
         top_p: 1.0,
         frequency_penalty: 0.8,
         presence_penalty: 0.0,        
@@ -40,8 +40,9 @@ const useApplicationData = () => {
         );
         const json = await response.data;
         console.log(json.choices[0].text.trim());
-    
-        dispatch({ type: ACTIONS.SET_EXTRACTED, payload: json.choices[0].text.trim() })
+        const keywords = json.choices[0].text.trim();
+        const keywordsLength = keywords.split(", ").length;
+        dispatch({ type: ACTIONS.SET_EXTRACTED, payload: {keywords, keywordsLength} })
       } catch (error) {
         console.log(error);
       }

@@ -7,36 +7,56 @@ export const ACTIONS = {
 }
 
 interface State {
-  keywords: string[];
+  keywords: string;
   isLoading: boolean;
-  isExtracted: boolean;
   showKeywords: boolean;
   input: string;
+  keywordsLength: number;
 }
 
-interface Action {
-  type: string;
-  payload?: any;
+interface ExtractBeginAction {
+  type: typeof ACTIONS.EXTRACT_BEGIN;
 }
 
-function reducer(state: State, action: Action) {
+interface SetExtractedAction {
+  type: typeof ACTIONS.SET_EXTRACTED;
+  payload: {
+    keywords: string;
+    keywordsLength: number;
+  };
+}
+
+interface SetInputAction {
+  type: typeof ACTIONS.SET_INPUT;
+  payload: string;
+}
+
+type Action = ExtractBeginAction | SetExtractedAction | SetInputAction;
+
+function reducer(state: State, action: Action): State {
   switch (action.type) {
     case ACTIONS.EXTRACT_BEGIN:
       return {
         ...state,
         isLoading: true,
-        isExtracted: true
+        showKeywords: false
       }
     case ACTIONS.SET_EXTRACTED:
       return {
         ...state,
         isLoading: false,
-        keywords: [action.payload]
+        showKeywords: true,
+        keywords: (action as SetExtractedAction).payload.keywords,
+        keywordsLength: (action as SetExtractedAction).payload.keywordsLength
       }
     case ACTIONS.SET_INPUT:
       return {
         ...state,
-        input: action.payload
+        isLoading: false,
+        showKeywords: false,
+        input: (action as SetInputAction).payload,
+        keywords: '',
+        keywordsLength: 0
       }
     default:
       throw new Error(
@@ -46,11 +66,11 @@ function reducer(state: State, action: Action) {
 }
 
 const INITIAL_STATE = {
-  keywords: [],
   isLoading: false,
-  isExtracted: false,
   showKeywords: false,
   input: '',
+  keywords: '',
+  keywordsLength: 0
 }
 
 interface AppContextProps {
