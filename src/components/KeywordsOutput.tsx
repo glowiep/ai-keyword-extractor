@@ -62,7 +62,7 @@ function KeywordsOutput() {
               </Text>
             </Box>
             {/* Copy icon here */}
-            <MotionButton {...copyButtonStyles} onClick={copyKeywords(`${keywordsText}`)}>
+            <MotionButton {...copyButtonStyles} onClick={() => copyKeywords(`${keywordsText}`)}>
               <CopyIcon />
             </MotionButton>
           </>
