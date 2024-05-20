@@ -2,15 +2,16 @@
 
 This is built with React and Chakra UI, with OpenAI integration to extract the best keywords based on the provided text.
 
-<div style="text-align:center">
-</div>
-
-
+!["AI Keyword Extractor project"](https://github.com/glowiep/ai-keyword-extractor/blob/main/public/ai-keyword-extractor.png?raw=true)
 
 <!-- ## What I learned 📚 -->
 
 ## Acknoledgements ✅
 Credits to TraversyMedia <a href="https://www.traversymedia.com/blog/ai-keyword-extractor-with-react-openai">tutorial</a>. 
+
+Text snippet used in the image is an exerp from one of my favorite books on software engineering: 
+
+📚 <a href="https://www.audible.com/pd/Modern-Software-Engineering-Audiobook/B0BLY5PL64">"Modern Software Engineering", by Dave Farley</a>
 
 ### How this project differs from the tutorial example:
 
@@ -18,7 +19,8 @@ Credits to TraversyMedia <a href="https://www.traversymedia.com/blog/ai-keyword-
 - useContext and useReducer is implemented to handle state.
 - Axios is used instead of fetch() for HTTP requests.
 - Additional feature - Copy keywords to clipboard button.
-- Minor difference in interface design.
+- Additional feature - Keyword Output section includes the keywords count.
+- Minor differences in interface design.
 - Framer-motion was used with ChakraUI components to animate displays.
 
 ## Getting Started ✨
