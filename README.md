@@ -9,7 +9,7 @@ This is built with React and Chakra UI, with OpenAI integration to extract the b
 ## Acknoledgements ✅
 Credits to TraversyMedia <a href="https://www.traversymedia.com/blog/ai-keyword-extractor-with-react-openai">tutorial</a>. 
 
-Text snippet used in the image is an exerp from one of my favorite books on software engineering: 
+Text snippet used in the image is a summary from one of my favorite books on software engineering: 
 
 📚 <a href="https://www.audible.com/pd/Modern-Software-Engineering-Audiobook/B0BLY5PL64">"Modern Software Engineering", by Dave Farley</a>
 
