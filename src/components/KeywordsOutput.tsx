@@ -2,8 +2,10 @@ import { Heading, Text, CircularProgress, Box } from "@chakra-ui/react";
 import { CopyIcon } from "@chakra-ui/icons";
 // import { useAppContext } from "../contexts/AppContext";
 import { MotionButton } from "../utils/motionUtils";
+import useApplicationData from "../hooks/useApplicationData";
 
 function KeywordsOutput() {
+  const { copyKeywords } = useApplicationData();
   // const { state } = useAppContext();
   // const { isLoading, showKeywords, keywords } = state;
   // Mock
@@ -11,10 +13,8 @@ function KeywordsOutput() {
   const isLoading = false;
   const keywords = [
     "test",
-    "q",
+    "keyword",
     "1",
-    "test",
-    "q",
     "1",
     "test",
     "q",
@@ -29,6 +29,7 @@ function KeywordsOutput() {
     "q",
     "1",
   ];
+  const keywordsText = keywords?.join(", ")
 
   const copyButtonStyles = {
     whileTap: { scale: 0.5, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" },
@@ -57,24 +58,13 @@ function KeywordsOutput() {
               </Heading>
               <Text fontSize="normal" textAlign="left" paddingLeft="1em">
                 {/* ARRAY OF KEYWORDS HERE */}
-                {keywords?.join(", ")}
+                {keywordsText}
               </Text>
             </Box>
             {/* Copy icon here */}
-            <MotionButton {...copyButtonStyles} >
+            <MotionButton {...copyButtonStyles} onClick={copyKeywords(`${keywordsText}`)}>
               <CopyIcon />
             </MotionButton>
-            {/* Example:
-          
-            <ContentCopyIcon
-            onClick={() => copyMemo(props.id)} 
-            fontSize="small"
-            sx={{
-              ":hover": {
-                cursor: "pointer",
-              },
-            }}
-          /> */}
           </>
         ))}
     </>

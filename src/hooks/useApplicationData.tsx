@@ -7,7 +7,7 @@ const useApplicationData = () => {
    * Extract keywords using Open API
    * @param input - the text snippet entered by the user
    */
-  async function extractKeywords (input){
+  async function extractKeywords (input: string){
     return console.log(input, state)
     // use axios
     // return (
@@ -51,7 +51,7 @@ const useApplicationData = () => {
   }
 
   // Helper function that accepts text as an argument and copies it to the user’s clipboard
-  async function copyTextToClipboard(text) {
+  async function copyTextToClipboard(text: string) {
     if ('clipboard' in navigator) {
       // if the browser supports the Clipboard API
       return await navigator.clipboard.writeText(text);
