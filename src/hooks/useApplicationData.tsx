@@ -40,7 +40,7 @@ const useApplicationData = () => {
         );
         const json = await response.data;
         console.log(json.choices[0].text.trim());
-        const keywords = json.choices[0].text.trim();
+        const keywords = json.choices[0].text.trim().replace(/,([^,]*)$/, '$1');
         const keywordsLength = keywords.split(", ").length;
         dispatch({ type: ACTIONS.SET_EXTRACTED, payload: {keywords, keywordsLength} })
       } catch (error) {
