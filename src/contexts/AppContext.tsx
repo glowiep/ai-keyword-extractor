@@ -1,11 +1,23 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, ReactNode, Dispatch } from "react";
 
 export const ACTIONS = {
   EXTRACT_BEGIN: 'EXTRACT_BEGIN',
   SET_EXTRACTED: 'SET_EXTRACTED',
 }
 
-function reducer(state: any, action: { type: any; payload: any; }) {
+interface State {
+  keywords: string[];
+  isLoading: boolean;
+  isExtracted: boolean;
+  showKeywords: boolean;
+}
+
+interface Action {
+  type: string;
+  payload?: any;
+}
+
+function reducer(state: State, action: Action) {
   switch (action.type) {
     case ACTIONS.EXTRACT_BEGIN:
       return {
@@ -32,9 +44,20 @@ const INITIAL_STATE = {
   isExtracted: false,
   showKeywords: false,
 }
-const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
+interface AppContextProps {
+  state: State;
+  dispatch: Dispatch<Action>;
+}
+
+const AppContext = createContext<AppContextProps | undefined>(undefined);
+
+
+interface AppProviderProps {
+  children: ReactNode;  // for anything that can be rendered in JSX
+}
+
+export const AppProvider = ({ children }: AppProviderProps) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   return (
       <AppContext.Provider value={{ state, dispatch }}>
@@ -44,5 +67,9 @@ export const AppProvider = ({ children }) => {
 }
 
 export const useAppContext = () => {
-  return useContext(AppContext);
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error('useAppContext must be used within an AppProvider')
+  }
+  return context;
 };
