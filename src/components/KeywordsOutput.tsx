@@ -2,11 +2,12 @@ import { Heading, Text, CircularProgress, Box } from "@chakra-ui/react";
 import { useAppContext } from "../contexts/AppContext";
 
 function KeywordsOutput() {
-  // const { state } = useAppContext();
-  // const { isLoading, showKeywords } = state;
-  const showKeywords = true;
-  const isLoading = false;
-  const keywords = ["test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1",]
+  const { state } = useAppContext();
+  const { isLoading, showKeywords, keywords } = state;
+  // Mock
+  // const showKeywords = true;
+  // const isLoading = false;
+  // const keywords = ["test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1","test", "q", "1",]
   return (
     <>
       {showKeywords && (isLoading ? (
