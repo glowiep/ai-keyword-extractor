@@ -1,6 +1,13 @@
 # AI Keyword Extractor 💬
 
-This is built with React and Chakra UI, with OpenAI integration to extract the best keywords based on the provided text.
+This application is developed using Vite, React with TypeScript, and Chakra UI. It is integrated with Open AI API to extract the best keywords based on the provided text. This is deployed on AWS Amplify.
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Chakra UI](https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
+![OpenAI](https://a11ybadges.com/badge?logo=openai)
+![AWS Amplify](https://a11ybadges.com/badge?logo=awsamplify)
+
 
 !["AI Keyword Extractor project"](https://github.com/glowiep/ai-keyword-extractor/blob/main/public/ai-keyword-extractor.png?raw=true)
 
@@ -54,6 +61,14 @@ To build for production:
 npm run build
 ```
 
+## Dependencies 🛠️
+
+- @chakra-ui/react: A modular and accessible component library for React applications. (v2.1.1)
+- axios: Promise-based HTTP client for making requests (v1.7.0)
+- framer-motion: Animation library for React (v11.2.4)
+- react: JavaScript library for building user interfaces (v18.2.0)
+- typescript: TypeScript language (v5.2.2)
+- vite: Next-generation frontend tooling for web development (v5.2.0)
 
 ## Learnings 📚
 
