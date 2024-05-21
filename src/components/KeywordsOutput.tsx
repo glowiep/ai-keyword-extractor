@@ -1,4 +1,4 @@
-import { Heading, Text, CircularProgress, Box } from "@chakra-ui/react";
+import { Heading, Text, CircularProgress, Box, useToast } from "@chakra-ui/react";
 import { CopyIcon } from "@chakra-ui/icons";
 import { useAppContext } from "../contexts/AppContext";
 import { MotionButton } from "../utils/motionUtils";
@@ -8,9 +8,7 @@ function KeywordsOutput() {
   const { copyKeywords } = useApplicationData();
   const { state } = useAppContext();
   const { isLoading, showKeywords, keywords,keywordsLength } = state;
-  // Get the text string of keywords separated by commas, and remove the last comma at the end with regex
-  // const keywordsText = keywords?.join(", ").replace(/,([^,]*)$/, '$1');
-console.log(keywords, keywordsLength)
+  
   const copyButtonStyles = {
     whileTap: { scale: 0.5, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" },
     whileHover: { scale: 1.1, cursor: "pointer" },
@@ -19,6 +17,21 @@ console.log(keywords, keywordsLength)
     w: "200px",
     bg: "blue.200",
   };
+
+  const toast = useToast();
+
+  function handleCopy() {
+    toast({
+      title: 'Copied to Clipboard!',
+      description: 'The keywords have been copied to your keyboard.',
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+      position: "top"
+    });
+    copyKeywords(`${keywords}`)
+  };
+
   return (
     <>
       {isLoading && <CircularProgress isIndeterminate color="blue.300" />}
@@ -43,7 +56,7 @@ console.log(keywords, keywordsLength)
           {/* Copy icon here */}
           <MotionButton
             {...copyButtonStyles}
-            onClick={() => copyKeywords(`${keywords}`)}
+            onClick={() => handleCopy()}
           >
             <CopyIcon />
           </MotionButton>
