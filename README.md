@@ -1,6 +1,6 @@
 # AI Keyword Extractor 💬
 
-This application is developed using Vite, React with TypeScript, and Chakra UI. It is integrated with Open AI API to extract the best keywords based on the provided text. This is deployed on AWS Amplify.
+This application is developed using Vite, React with TypeScript, and Chakra UI. It is integrated with OpenAI API to extract the best keywords based on the provided text. This is deployed on AWS Amplify.
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
