@@ -1,6 +1,6 @@
 # AI Keyword Extractor 💬
 
-This application is developed using Vite, React with TypeScript, and Chakra UI. It is integrated with OpenAI API to extract the best keywords based on the provided text. This is deployed on AWS Amplify.
+This application is developed using Vite, React with TypeScript, and Chakra UI. It is integrated with OpenAI API to extract the best keywords based on the provided text. This application is deployed on AWS Amplify.
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -61,15 +61,6 @@ To build for production:
 npm run build
 ```
 
-## Dependencies 🛠️
-
-- @chakra-ui/react: A modular and accessible component library for React applications. (v2.1.1)
-- axios: Promise-based HTTP client for making requests (v1.7.0)
-- framer-motion: Animation library for React (v11.2.4)
-- react: JavaScript library for building user interfaces (v18.2.0)
-- typescript: TypeScript language (v5.2.2)
-- vite: Next-generation frontend tooling for web development (v5.2.0)
-
 ## Learnings 📚
 
 This application was created with the fundamental principles in software engineering in mind:
@@ -89,3 +80,19 @@ This application was created with the fundamental principles in software enginee
 - <b>Information Hiding and Abstraction</b> - Conceal the internal details of a module or component, exposing only what is necessary for the use of that module or component.
   - In this project:
     <br> Text strings are isolated from the business logic. It is abstracted and placed in const/applicationText.tsx file.
+
+
+## Dependencies 🛠️
+
+- @chakra-ui/react: A modular and accessible component library for React applications. (v2.1.1)
+- axios: Promise-based HTTP client for making requests (v1.7.0)
+- framer-motion: Animation library for React (v11.2.4)
+- react: JavaScript library for building user interfaces (v18.2.0)
+- typescript: TypeScript language (v5.2.2)
+- vite: Next-generation frontend tooling for web development (v5.2.0)
+
+## Future Improvements 💡
+
+- Set up Amplify backend with user authentication.
+- Configure REST API using AWS Lambda.
+- Update frontend to use backend services.
